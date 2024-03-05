@@ -21,11 +21,13 @@ Test CUDA with PyTorch:
 ```
 python -c "import torch; print(torch.cuda.is_available())"
 ```
-Check NVCC and Python Versions:
+Check NVCC and Python Versions (optional):
 ```
 nvcc --version
 which python
 ```
+Feel free to check if other dependencies are installed with expected version here.
+
 ## Slurm Script Example
 
 Below is an example .slurm script for a GPU job:
@@ -66,12 +68,12 @@ time nvidia-smi >& logfile
 ```
 ## Job Submission
 
-To submit your job to the GPU queue, use the following command:
+To submit your job to the GPU queue, use the following command (use sbatch at your current working directory):
 ```
 sbatch <your_script>.slurm
 ```
 ## Job Status Control
-You can check on the status with squeue (to see only your jobs, 'squeue' will show every job on the system):
+You can check on the status with squeue (to see only your jobs, 'squeue' will show every job on the system; it can run at any directory):
 ```
 squeue -u <your_username>
 ```
